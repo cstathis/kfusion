@@ -65,7 +65,7 @@ inline std::ostream & operator<<(std::ostream & out, const float4 & m) {
 
 
 template<> inline void  TypedParameter<float3>::copyValue(float3* to,const float3* from) {*(float3*)to = *(float3*)from;;};
-template<> inline void  TypedParameter<float3>::setValue(const char* otarg)                  {(*(float3*)_ptr)= atof3<float3>(otarg);};
+template<> inline void  TypedParameter<float3>::setValue(const char* otarg)                  {(*(float3*)ptr_)= atof3<float3>(otarg);};
 template<> inline const std::string  TypedParameter<float3>::getValue(const void * ptr)  {
     float3 v = *((float3*)ptr);
     std::ostringstream ss;
@@ -75,7 +75,7 @@ template<> inline const std::string  TypedParameter<float3>::getValue(const void
 
 
 template<> inline void  TypedParameter<float4>::copyValue(float4* to,const float4* from) {*(float4*)to = *(float4*)from;;};
-template<> inline void  TypedParameter<float4>::setValue(const char* otarg)                  {(*(float4*)_ptr)= atof4<float4>(otarg);};
+template<> inline void  TypedParameter<float4>::setValue(const char* otarg)                  {(*(float4*)ptr_)= atof4<float4>(otarg);};
 template<> inline const std::string  TypedParameter<float4>::getValue(const void * ptr)  {
     float4 v = *((float4*)ptr);
     std::ostringstream ss;
@@ -85,7 +85,7 @@ template<> inline const std::string  TypedParameter<float4>::getValue(const void
 
 
 template<> inline void  TypedParameter<uint3>::copyValue(uint3* to,const uint3* from) {*(uint3*)to = *(uint3*)from;;};
-template<> inline void  TypedParameter<uint3>::setValue(const char* otarg)                  {(*(uint3*)_ptr)= atoi3<uint3>(otarg);};
+template<> inline void  TypedParameter<uint3>::setValue(const char* otarg)                  {(*(uint3*)ptr_)= atoi3<uint3>(otarg);};
 template<> inline const std::string  TypedParameter<uint3>::getValue(const void * ptr)  {
     uint3 v = *((uint3*)ptr);
     std::ostringstream ss;
